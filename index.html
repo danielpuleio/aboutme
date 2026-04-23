@@ -8,14 +8,11 @@
       name="google-site-verification"
       content="dXCdaILtsRTPax4dEysYgSglmv9qJQjuIx4oKzR5XyY"
     />
-    <!-- Primary SEO -->
     <meta
       name="description"
       content="Daniel Puleio — Software engineer specializing in aerospace systems, embedded platforms, and distributed infrastructure. Based in Cambridge, MA."
     />
     <meta name="author" content="Daniel Puleio" />
-
-    <!-- Open Graph (controls how it looks when shared on LinkedIn, etc.) -->
     <meta property="og:title" content="Daniel Puleio" />
     <meta
       property="og:description"
@@ -23,19 +20,25 @@
     />
     <meta property="og:url" content="https://danielpuleio.github.io/aboutme/" />
     <meta property="og:type" content="website" />
-
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://danielpuleio.github.io/aboutme/" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
       rel="stylesheet"
     />
     <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         font-family: "DM Sans", sans-serif;
         background: #0a0a0f;
         color: #e8e4dc;
+        -webkit-font-smoothing: antialiased;
       }
       .syne {
         font-family: "Syne", sans-serif;
@@ -120,6 +123,7 @@
       .nav-link:hover {
         color: #00e5ff;
       }
+
       .btn-primary {
         font-family: "Syne", sans-serif;
         font-size: 0.72rem;
@@ -139,6 +143,7 @@
         background: #33eeff;
         transform: translateY(-1px);
       }
+
       .btn-secondary {
         font-family: "Syne", sans-serif;
         font-size: 0.72rem;
@@ -157,6 +162,7 @@
         border-color: #00e5ff;
         color: #00e5ff;
       }
+
       .card {
         background: #111118;
         border: 1px solid #1e1e2a;
@@ -166,6 +172,7 @@
       .card:hover {
         border-color: rgba(0, 229, 255, 0.25);
       }
+
       .timeline-dot {
         width: 12px;
         height: 12px;
@@ -219,345 +226,641 @@
         transform: scale(1.05);
         filter: brightness(1) saturate(1);
       }
+
+      /* Layout helpers replacing Tailwind */
+      .container {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .divider {
+        height: 1px;
+        background: #1e1e2a;
+      }
+
+      .nav-inner {
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .hero-section {
+        padding: 9rem 0 6rem;
+      }
+      .hero-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+      }
+      @media (min-width: 768px) {
+        .hero-inner {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+      .hero-text {
+        flex: 1;
+      }
+      .hero-pulse {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .pulse-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: #00e5ff;
+        animation: pulse 2s infinite;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+      .hero-photo {
+        flex-shrink: 0;
+      }
+
+      .section {
+        padding: 6rem 0;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 4rem;
+      }
+      .section-header-line {
+        flex: 1;
+        height: 1px;
+        background: #1e1e2a;
+      }
+
+      .exp-list {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+      .exp-item {
+        display: flex;
+        gap: 2rem;
+        position: relative;
+      }
+      .exp-dot-wrap {
+        position: relative;
+        padding-top: 0.25rem;
+      }
+
+      .exp-card {
+        flex: 1;
+        padding: 1.5rem;
+      }
+      .exp-card-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
+      .exp-tags {
+        margin-top: 1rem;
+      }
+
+      .field-section {
+        padding: 6rem 0;
+      }
+      .field-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .field-header-line {
+        flex: 1;
+        height: 1px;
+        background: #1e1e2a;
+      }
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+      @media (min-width: 768px) {
+        .photo-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .edu-section {
+        padding: 6rem 0;
+      }
+      .edu-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+      .edu-header-line {
+        flex: 1;
+        height: 1px;
+        background: #1e1e2a;
+      }
+      .edu-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1.5rem;
+        border-color: rgba(0, 229, 255, 0.2) !important;
+      }
+      @media (min-width: 768px) {
+        .edu-card {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        font-size: 0.75rem;
+        font-family: "Syne", sans-serif;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #333;
+      }
     </style>
   </head>
   <body>
     <!-- NAV -->
     <nav
-      class="content fixed top-0 left-0 right-0 z-50"
+      class="content"
       style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
         background: rgba(10, 10, 15, 0.88);
         backdrop-filter: blur(12px);
         border-bottom: 1px solid #1e1e2a;
       "
     >
-      <div
-        class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"
-      >
-        <span
-          class="syne font-bold text-sm tracking-widest"
-          style="color: #00e5ff"
-          >DP</span
-        >
-        <div class="flex gap-6 items-center">
-          <a href="#work" class="nav-link">Work</a>
-          <a href="#field" class="nav-link">Field Ops</a>
-          <a href="#edu" class="nav-link">Education</a>
-          <a
-            href="https://www.linkedin.com/in/danielpuleio/"
-            target="_blank"
-            class="nav-link"
-            >LinkedIn</a
+      <div class="container">
+        <div class="nav-inner">
+          <span
+            class="syne"
+            style="
+              font-weight: 700;
+              font-size: 0.875rem;
+              letter-spacing: 0.1em;
+              color: #00e5ff;
+            "
+            >DP</span
           >
+          <div class="nav-links">
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#field" class="nav-link">Field Ops</a>
+            <a href="#edu" class="nav-link">Education</a>
+            <a
+              href="https://www.linkedin.com/in/danielpuleio/"
+              target="_blank"
+              class="nav-link"
+              >LinkedIn</a
+            >
+          </div>
         </div>
       </div>
     </nav>
 
     <!-- HERO -->
-    <section class="content max-w-5xl mx-auto px-6 pt-36 pb-24">
-      <div class="flex flex-col md:flex-row md:items-center gap-14">
-        <div class="flex-1 fade-in d1">
-          <div class="flex items-center gap-3 mb-6">
-            <div
-              class="w-2 h-2 rounded-full"
-              style="background: #00e5ff; animation: pulse 2s infinite"
-            ></div>
-            <span
-              class="text-xs font-medium tracking-widest uppercase"
-              style="color: #555"
-              >Cambridge, MA</span
+    <section class="content hero-section">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-text fade-in d1">
+            <div class="hero-pulse">
+              <div class="pulse-dot"></div>
+              <span
+                style="
+                  font-size: 0.75rem;
+                  font-weight: 500;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  color: #555;
+                "
+                >Cambridge, MA</span
+              >
+            </div>
+            <h1
+              class="syne fade-in d1"
+              style="
+                font-weight: 800;
+                line-height: 1;
+                letter-spacing: -0.02em;
+                font-size: clamp(2rem, 5vw, 3.5rem);
+                margin-bottom: 1.5rem;
+              "
             >
+              Daniel<br /><span style="color: #00e5ff">Puleio</span>
+            </h1>
+            <p
+              style="
+                font-weight: 300;
+                line-height: 1.7;
+                max-width: 32rem;
+                color: #777;
+                font-size: 1.05rem;
+              "
+            >
+              Software engineer with a background in aerospace systems,
+              distributed infrastructure, and embedded platforms. Previously
+              NASA Goddard, Goldman Sachs, and UBNL.
+            </p>
+            <div class="hero-btns">
+              <a
+                href="https://www.linkedin.com/in/danielpuleio/"
+                target="_blank"
+                class="btn-primary"
+                >LinkedIn</a
+              >
+              <a
+                href="DanielPuleioResume.pdf"
+                target="_blank"
+                class="btn-secondary"
+                >Resume ↗</a
+              >
+            </div>
           </div>
-          <h1
-            class="syne font-extrabold leading-none tracking-tight mb-6"
-            style="font-size: clamp(2rem, 5vw, 3.5rem)"
-          >
-            Daniel<br /><span style="color: #00e5ff">Puleio</span>
-          </h1>
-          <p
-            class="font-light leading-relaxed max-w-lg mb-8"
-            style="color: #777; font-size: 1.05rem"
-          >
-            Software engineer with a background in aerospace systems,
-            distributed infrastructure, and embedded platforms. Previously NASA
-            Goddard, Goldman Sachs, and UBNL.
-          </p>
-          <div class="flex gap-3 flex-wrap">
-            <a
-              href="https://www.linkedin.com/in/danielpuleio/"
-              target="_blank"
-              class="btn-primary"
-              >LinkedIn</a
-            >
-            <a
-              href="DanielPuleio,Resume.pdf"
-              target="_blank"
-              class="btn-secondary"
-              >Resume ↗</a
-            >
+          <div class="hero-photo fade-in d2">
+            <img
+              src="danielpuleio.jpg"
+              alt="Daniel Puleio — Software Engineer"
+              class="headshot-glow"
+              style="
+                width: 160px;
+                height: 160px;
+                object-fit: cover;
+                border-radius: 4px;
+              "
+            />
           </div>
-        </div>
-        <div class="fade-in d2 flex-shrink-0">
-          <img
-            src="danielpuleio.jpg"
-            alt="Daniel Puleio"
-            class="headshot-glow"
-            style="
-              width: 160px;
-              height: 160px;
-              object-fit: cover;
-              border-radius: 4px;
-            "
-          />
         </div>
       </div>
     </section>
 
-    <div class="content max-w-5xl mx-auto px-6">
-      <div style="height: 1px; background: #1e1e2a"></div>
-    </div>
+    <div class="content container"><div class="divider"></div></div>
 
     <!-- EXPERIENCE -->
-    <section id="work" class="content max-w-5xl mx-auto px-6 py-24 fade-in d3">
-      <div class="flex items-center gap-4 mb-16">
-        <span class="section-label">Experience</span>
-        <div class="flex-1" style="height: 1px; background: #1e1e2a"></div>
-      </div>
-      <div class="space-y-12">
-        <!-- Drone Project -->
-        <div class="flex gap-8 relative">
-          <div class="relative pt-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="card flex-1 p-6">
-            <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
-              <span class="syne text-xl font-bold" style="color: #e8e4dc"
-                >Drone R&amp;D Project</span
-              >
-              <span
-                class="syne text-xs tracking-widest uppercase"
-                style="color: #00e5ff"
-                >Present</span
-              >
-            </div>
-            <p class="text-sm font-medium mb-4" style="color: #555">
-              Flight Software · Cambridge, MA
-            </p>
-            <p class="font-light leading-relaxed text-sm" style="color: #999">
-              R&amp;D project building flight software for an autonomous drone
-              platform. Developed the software stack for interfacing with and
-              commanding onboard subsystems, including real-time telemetry,
-              gimbal control, and GPS-based pointing logic. Conducted field
-              flight operations in Cambridge, managing FAA coordination and
-              day/night test flights.
-            </p>
-            <div class="mt-4">
-              <span class="tag">C++</span
-              ><span class="tag">Embedded Systems</span
-              ><span class="tag">DJI OSDK</span
-              ><span class="tag">Flight Software</span
-              ><span class="tag">GPS / GNSS</span
-              ><span class="tag">Field Operations</span>
-            </div>
-          </div>
+    <section id="work" class="content section fade-in d3">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Experience</span>
+          <div class="section-header-line"></div>
         </div>
-
-        <!-- Goldman -->
-        <div class="flex gap-8 relative">
-          <div class="relative pt-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="card flex-1 p-6">
-            <div class="mb-1">
-              <span class="syne text-xl font-bold" style="color: #e8e4dc"
-                >Goldman Sachs</span
+        <div class="exp-list">
+          <!-- Drone Project -->
+          <div class="exp-item">
+            <div class="exp-dot-wrap">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="card exp-card">
+              <div class="exp-card-header">
+                <span
+                  class="syne"
+                  style="font-size: 1.25rem; font-weight: 700; color: #e8e4dc"
+                  >Drone R&amp;D Project</span
+                >
+                <span
+                  class="syne"
+                  style="
+                    font-size: 0.75rem;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    color: #00e5ff;
+                  "
+                  >Present</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 0.875rem;
+                  font-weight: 500;
+                  color: #555;
+                  margin-bottom: 1rem;
+                "
               >
-            </div>
-            <p class="text-sm font-medium mb-4" style="color: #555">
-              Platform Engineer — Marquee · New York, NY
-            </p>
-            <p class="font-light leading-relaxed text-sm" style="color: #999">
-              Platform engineer for Marquee, Goldman Sachs' institutional
-              digital storefront. Owned Router — an in-house API gateway
-              handling authn/authz, URL/body validation, CSRF and content
-              policy, backed by Zookeeper service registration across 200+
-              microservices. Replaced NGINX with Envoy Proxy and implemented
-              traffic isolation across Marquee routers.
-            </p>
-            <div class="mt-4">
-              <span class="tag">Java</span>
-              <span class="tag">Envoy Proxy</span
-              ><span class="tag">API Gateway</span
-              ><span class="tag">Distributed Systems</span
-              ><span class="tag">Zookeeper</span
-              ><span class="tag">Microservices</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- NASA -->
-        <div class="flex gap-8 relative">
-          <div class="relative pt-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="card flex-1 p-6">
-            <div class="mb-1">
-              <span class="syne text-xl font-bold" style="color: #e8e4dc"
-                >NASA Goddard Space Flight Center</span
+                Flight Software · Cambridge, MA
+              </p>
+              <p
+                style="
+                  font-weight: 300;
+                  line-height: 1.7;
+                  font-size: 0.875rem;
+                  color: #999;
+                "
               >
-            </div>
-            <p class="text-sm font-medium mb-4" style="color: #555">
-              Software Engineering Intern · Greenbelt, MD
-            </p>
-            <p class="font-light leading-relaxed text-sm" style="color: #999">
-              Built a C++ client-server application for NASA's Radar Control
-              Center using asynchronous UDP sockets. Implemented raw packet
-              decoding, signal quality checks, and AES-256 encryption on
-              broadcast traffic. Delivered operator GUIs for monitoring and
-              broadcasting radar data across the control center network.
-            </p>
-            <div class="mt-4">
-              <span class="tag">C++</span><span class="tag">UDP Sockets</span
-              ><span class="tag">AES-256</span><span class="tag">GUI</span
-              ><span class="tag">Network Programming</span>
+                R&amp;D project building flight software for an autonomous drone
+                platform. Developed the software stack for interfacing with and
+                commanding onboard subsystems, including real-time telemetry,
+                gimbal control, and GPS-based pointing logic. Conducted field
+                flight operations in Cambridge, managing FAA coordination and
+                day/night test flights.
+              </p>
+              <div class="exp-tags">
+                <span class="tag">C++</span
+                ><span class="tag">Embedded Systems</span
+                ><span class="tag">DJI OSDK</span
+                ><span class="tag">Flight Software</span
+                ><span class="tag">GPS / GNSS</span
+                ><span class="tag">Field Operations</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- UBNL -->
-        <div class="flex gap-8 relative">
-          <div class="relative pt-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="card flex-1 p-6">
-            <div class="mb-1">
-              <span class="syne text-xl font-bold" style="color: #e8e4dc"
-                >UB Nanosatellite Laboratory</span
+          <!-- Goldman -->
+          <div class="exp-item">
+            <div class="exp-dot-wrap">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="card exp-card">
+              <div style="margin-bottom: 0.25rem">
+                <span
+                  class="syne"
+                  style="font-size: 1.25rem; font-weight: 700; color: #e8e4dc"
+                  >Goldman Sachs</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 0.875rem;
+                  font-weight: 500;
+                  color: #555;
+                  margin-bottom: 1rem;
+                "
               >
-            </div>
-            <p class="text-sm font-medium mb-4" style="color: #555">
-              Mission Control Lead · Buffalo, NY
-            </p>
-            <p class="font-light leading-relaxed text-sm" style="color: #999">
-              Led the Mission Control subsystem for UB's nanosatellite research
-              program. Built the frontend and REST API layer for satellite
-              ground communications. Designed the models stack in Python, Redis,
-              Flask, and MongoDB to handle satellite uplinks and downlinks.
-              Satellites launched with support from the Air Force Research
-              Laboratory and NASA.
-            </p>
-            <div class="mt-4">
-              <span class="tag">Python</span><span class="tag">Flask</span
-              ><span class="tag">Redis</span><span class="tag">MongoDB</span
-              ><span class="tag">REST API</span
-              ><span class="tag">JavaScript</span>
+                Platform Engineer — Marquee · New York, NY
+              </p>
+              <p
+                style="
+                  font-weight: 300;
+                  line-height: 1.7;
+                  font-size: 0.875rem;
+                  color: #999;
+                "
+              >
+                Platform engineer for Marquee, Goldman Sachs' institutional
+                digital storefront. Owned Router — an in-house API gateway
+                handling authn/authz, URL/body validation, CSRF and content
+                policy, backed by Zookeeper service registration across 200+
+                microservices. Replaced NGINX with Envoy Proxy and implemented
+                traffic isolation across Marquee routers.
+              </p>
+              <div class="exp-tags">
+                <span class="tag">Java</span><span class="tag">Envoy Proxy</span
+                ><span class="tag">API Gateway</span
+                ><span class="tag">Distributed Systems</span
+                ><span class="tag">Zookeeper</span
+                ><span class="tag">Microservices</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Telephonics -->
-        <div class="flex gap-8 relative">
-          <div class="relative pt-1"><div class="timeline-dot"></div></div>
-          <div class="card flex-1 p-6">
-            <div class="mb-1">
-              <span class="syne text-xl font-bold" style="color: #e8e4dc"
-                >Telephonics Corporation</span
-              >
+          <!-- NASA -->
+          <div class="exp-item">
+            <div class="exp-dot-wrap">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
             </div>
-            <p class="text-sm font-medium mb-4" style="color: #555">
-              Software Engineering Intern · Farmingdale, NY
-            </p>
-            <p class="font-light leading-relaxed text-sm" style="color: #999">
-              Modernized the RAMP GUI application for Windows 7 by replacing
-              Advantech's USB driver with Microsoft's WinUSB API. Added barcode
-              scanner support for serial ID reporting across up to 20 handheld
-              telecom units.
-            </p>
-            <div class="mt-4">
-              <span class="tag">C</span><span class="tag">WinUSB</span
-              ><span class="tag">Windows Driver Dev</span>
+            <div class="card exp-card">
+              <div style="margin-bottom: 0.25rem">
+                <span
+                  class="syne"
+                  style="font-size: 1.25rem; font-weight: 700; color: #e8e4dc"
+                  >NASA Goddard Space Flight Center</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 0.875rem;
+                  font-weight: 500;
+                  color: #555;
+                  margin-bottom: 1rem;
+                "
+              >
+                Software Engineering Intern · Greenbelt, MD
+              </p>
+              <p
+                style="
+                  font-weight: 300;
+                  line-height: 1.7;
+                  font-size: 0.875rem;
+                  color: #999;
+                "
+              >
+                Built a C++ client-server application for NASA's Radar Control
+                Center using asynchronous UDP sockets. Implemented raw packet
+                decoding, signal quality checks, and AES-256 encryption on
+                broadcast traffic. Delivered operator GUIs for monitoring and
+                broadcasting radar data across the control center network.
+              </p>
+              <div class="exp-tags">
+                <span class="tag">C++</span><span class="tag">UDP Sockets</span
+                ><span class="tag">AES-256</span><span class="tag">GUI</span
+                ><span class="tag">Network Programming</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- UBNL -->
+          <div class="exp-item">
+            <div class="exp-dot-wrap">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="card exp-card">
+              <div style="margin-bottom: 0.25rem">
+                <span
+                  class="syne"
+                  style="font-size: 1.25rem; font-weight: 700; color: #e8e4dc"
+                  >UB Nanosatellite Laboratory</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 0.875rem;
+                  font-weight: 500;
+                  color: #555;
+                  margin-bottom: 1rem;
+                "
+              >
+                Mission Control Lead · Buffalo, NY
+              </p>
+              <p
+                style="
+                  font-weight: 300;
+                  line-height: 1.7;
+                  font-size: 0.875rem;
+                  color: #999;
+                "
+              >
+                Led the Mission Control subsystem for UB's nanosatellite
+                research program. Built the frontend and REST API layer for
+                satellite ground communications. Designed the models stack in
+                Python, Redis, Flask, and MongoDB to handle satellite uplinks
+                and downlinks. Satellites launched with support from the Air
+                Force Research Laboratory and NASA.
+              </p>
+              <div class="exp-tags">
+                <span class="tag">Python</span><span class="tag">Flask</span
+                ><span class="tag">Redis</span><span class="tag">MongoDB</span
+                ><span class="tag">REST API</span
+                ><span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Telephonics -->
+          <div class="exp-item">
+            <div class="exp-dot-wrap">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="card exp-card">
+              <div style="margin-bottom: 0.25rem">
+                <span
+                  class="syne"
+                  style="font-size: 1.25rem; font-weight: 700; color: #e8e4dc"
+                  >Telephonics Corporation</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 0.875rem;
+                  font-weight: 500;
+                  color: #555;
+                  margin-bottom: 1rem;
+                "
+              >
+                Software Engineering Intern · Farmingdale, NY
+              </p>
+              <p
+                style="
+                  font-weight: 300;
+                  line-height: 1.7;
+                  font-size: 0.875rem;
+                  color: #999;
+                "
+              >
+                Modernized the RAMP GUI application for Windows 7 by replacing
+                Advantech's USB driver with Microsoft's WinUSB API. Added
+                barcode scanner support for serial ID reporting across up to 20
+                handheld telecom units.
+              </p>
+              <div class="exp-tags">
+                <span class="tag">C</span><span class="tag">WinUSB</span
+                ><span class="tag">Windows Driver Dev</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="content max-w-5xl mx-auto px-6">
-      <div style="height: 1px; background: #1e1e2a"></div>
-    </div>
+    <div class="content container"><div class="divider"></div></div>
 
     <!-- FIELD OPS -->
-    <section id="field" class="content max-w-5xl mx-auto px-6 py-24">
-      <div class="flex items-center gap-4 mb-6">
-        <span class="section-label">Field Operations</span>
-        <div class="flex-1" style="height: 1px; background: #1e1e2a"></div>
-      </div>
-      <p
-        class="font-light text-sm leading-relaxed mb-12 max-w-xl"
-        style="color: #555"
-      >
-        Flight operations in Kendall Square, Cambridge — day and night test
-        flights on a DJI M600 platform, with real-time software commanding from
-        the field.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="photo-wrap">
-          <img
-            src="IMG_1222.jpeg"
-            alt="Commanding drone from laptop in the field"
-          />
+    <section id="field" class="content field-section">
+      <div class="container">
+        <div class="field-header">
+          <span class="section-label">Field Operations</span>
+          <div class="field-header-line"></div>
         </div>
-        <div class="photo-wrap">
-          <img src="IMG_1220.jpeg" alt="DJI M600 hovering at low altitude" />
-        </div>
-        <div class="photo-wrap">
-          <img src="IMG_1218.jpeg" alt="Night flight with city skyline" />
+        <p
+          style="
+            font-weight: 300;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            max-width: 36rem;
+            color: #555;
+          "
+        >
+          Flight operations in Kendall Square, Cambridge — day and night test
+          flights on a DJI M600 platform, with real-time software commanding
+          from the field.
+        </p>
+        <div class="photo-grid">
+          <div class="photo-wrap">
+            <img
+              src="IMG_1222.jpeg"
+              alt="Commanding drone from laptop in the field"
+            />
+          </div>
+          <div class="photo-wrap">
+            <img src="IMG_1220.jpeg" alt="DJI M600 hovering at low altitude" />
+          </div>
+          <div class="photo-wrap">
+            <img src="IMG_1218.jpeg" alt="Night flight with city skyline" />
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="content max-w-5xl mx-auto px-6">
-      <div style="height: 1px; background: #1e1e2a"></div>
-    </div>
+    <div class="content container"><div class="divider"></div></div>
 
     <!-- EDUCATION -->
-    <section id="edu" class="content max-w-5xl mx-auto px-6 py-24">
-      <div class="flex items-center gap-4 mb-10">
-        <span class="section-label">Education</span>
-        <div class="flex-1" style="height: 1px; background: #1e1e2a"></div>
-      </div>
-      <div
-        class="card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3"
-        style="border-color: rgba(0, 229, 255, 0.2)"
-      >
-        <div>
-          <p class="syne text-lg font-bold" style="color: #e8e4dc">
-            B.S. Computer Engineering
-          </p>
-          <p class="text-sm mt-1" style="color: #555">
-            SUNY University at Buffalo
-          </p>
+    <section id="edu" class="content edu-section">
+      <div class="container">
+        <div class="edu-header">
+          <span class="section-label">Education</span>
+          <div class="edu-header-line"></div>
         </div>
-        <span
-          class="syne text-xs tracking-widest uppercase"
-          style="color: #00e5ff"
-          >Buffalo, NY</span
-        >
+        <div class="card edu-card">
+          <div>
+            <p
+              class="syne"
+              style="font-size: 1.125rem; font-weight: 700; color: #e8e4dc"
+            >
+              B.S. Computer Engineering
+            </p>
+            <p style="font-size: 0.875rem; margin-top: 0.25rem; color: #555">
+              SUNY University at Buffalo
+            </p>
+          </div>
+          <span
+            class="syne"
+            style="
+              font-size: 0.75rem;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+              color: #00e5ff;
+            "
+            >Buffalo, NY</span
+          >
+        </div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="content" style="border-top: 1px solid #1e1e2a">
-      <div
-        class="max-w-5xl mx-auto px-6 py-8 flex justify-between items-center text-xs syne tracking-widest uppercase"
-        style="color: #333"
-      >
-        <span>danielpuleio.github.io</span>
-        <span>Cambridge, MA</span>
+      <div class="container">
+        <div class="footer-inner">
+          <span>danielpuleio.github.io</span>
+          <span>Cambridge, MA</span>
+        </div>
       </div>
     </footer>
   </body>
